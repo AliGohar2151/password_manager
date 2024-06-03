@@ -1,0 +1,11 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<h1>Password Manager</h1>
+<a href="{% url 'add_password' %}" class="btn btn-primary">Add New Password</a>
+<ul>
+    {% for password in passwords %}
+    <li>{{ password.website }} - {{ password.username }} - {{ password.decrypt_password }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
